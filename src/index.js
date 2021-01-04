@@ -3,11 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Inventory } from '../src/stores/Inventory';
+import { Provider } from 'mobx-react';
+
+let store = new Inventory();
+const stores = {
+  store
+}
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider {...stores}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 

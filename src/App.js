@@ -1,25 +1,14 @@
-import logo from './logo.svg';
+import { observer } from 'mobx-react';
+import React from "react";
 import './App.css';
+import Market from './components/Market';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = observer((props) => {
+	return (
+		<header className="App-header">
+			{<Market />}
+		</header>
+	);
+});
 
 export default App;
